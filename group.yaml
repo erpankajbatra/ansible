@@ -1,0 +1,10 @@
+---
+
+- hosts: machine2
+  become: yes
+  tasks:
+   - name: user creation
+     user: name=dummyuser uid=1010
+  
+   - name: group creation
+     group: name=dummygroup gid=1230

@@ -1,0 +1,16 @@
+---
+
+
+- hosts: all
+  become: yes	
+  tasks:
+    - name: install apache
+      apt: name=apache2 state=present
+    
+    - name: start apache service 
+      service: name=apache2 state=started enabled=yes
+    
+    - name: content
+      lineinfile: dest='/var/www/html/index.html' line='{{ ansible_hostname }}'$
+    - name: content2
+      shell: echo " {{ ansible_hostname }} " > /var/www/html/index.html

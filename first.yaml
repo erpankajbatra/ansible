@@ -1,0 +1,10 @@
+---
+
+- hosts: machine2
+  tasks:
+    - name: create directory
+      file: path='/home/user/firstdirectory' state=directory
+
+    - name: create file
+      file: path='/home/user/firstdirectory/firstfile.txt' state=touch
+
